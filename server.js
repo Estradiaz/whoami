@@ -7,7 +7,7 @@ app.get("/", function(req, res){
     req.socket.remoteAddress ||
     req.connection.socket.remoteAddress;
     console.log(ip);
-    let obj = new whoami(req.headers.host, req.headers["accept-language"], req.headers["user-agent"])
+    let obj = new whoami(ip, req.headers["accept-language"], req.headers["user-agent"])
     res.send(JSON.stringify(obj));
 });
 
